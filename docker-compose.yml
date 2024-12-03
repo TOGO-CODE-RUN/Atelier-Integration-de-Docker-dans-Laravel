@@ -28,7 +28,7 @@ services:
       MYSQL_PASSWORD: test_db_password
       MYSQL_ROOT_PASSWORD: test_db_root_password
     ports:
-      - 3307:3306
+      - 3308:3306
     volumes:
       - db_data:/var/lib/mysql
 
@@ -36,7 +36,7 @@ services:
     image: phpmyadmin:latest
     container_name: phpmyadmin_container
     ports:
-      - 8080:80
+      - 8081:80
     depends_on:
       - db
     environment:
