@@ -1,8 +1,13 @@
 # Atelier Docker + Laravel : Guide d'Installation et de Démarrage
 
+## Informations
+
+L'atelier à été fait le Vendredi 29 Novembre 2024 (19h30min -21h30 min ) avec la communauté TCR
+
 ## 🚀 Prérequis
 
 Avant de commencer, assurez-vous d'avoir installé :
+
 - Docker Desktop (ou Docker Engine)
 - Docker Compose
 - Git
@@ -18,6 +23,7 @@ cd  Atelier-Integration-de-Docker-dans-Laravel
 ## 🛠️ Configuration Initiale
 
 ### 1. Variables d'Environnement
+
 Copiez le fichier `.env.example` en `.env` :
 
 ```bash
@@ -37,11 +43,13 @@ docker-compose up -d
 ## 🔧 Installation des Dépendances
 
 ### Composer (Dépendances PHP)
+
 ```bash
 docker-compose exec app composer install
 ```
 
 ### NPM (Dépendances Frontend)
+
 ```bash
 docker-compose exec app npm install
 ```
@@ -51,9 +59,6 @@ docker-compose exec app npm install
 ```bash
 # Générer la clé de l'application Laravel
 docker-compose exec app php artisan key:generate
-
-# Générer les clés de passport (si utilisé)
-docker-compose exec app php artisan passport:keys
 ```
 
 ## 📊 Configuration de la Base de Données
@@ -61,9 +66,6 @@ docker-compose exec app php artisan passport:keys
 ```bash
 # Migration des bases de données
 docker-compose exec app php artisan migrate
-
-# (Optionnel) Seeding initial des données
-docker-compose exec app php artisan db:seed
 ```
 
 ## 🌐 Accès à l'Application
@@ -74,16 +76,19 @@ docker-compose exec app php artisan db:seed
 ## 📋 Commandes Utiles
 
 ### Arrêter les conteneurs
+
 ```bash
 docker-compose down
 ```
 
 ### Redémarrer les conteneurs
+
 ```bash
 docker-compose restart
 ```
 
 ### Voir les logs
+
 ```bash
 docker-compose logs -f app
 ```
@@ -91,6 +96,7 @@ docker-compose logs -f app
 ## 🛠 Détails Techniques
 
 ### Structure du Projet
+
 - `Dockerfile` : Configuration de l'image principale de l'application
 - `docker-compose.yml` : Orchestration des services
 - `nginx.conf` : Configuration du serveur web Nginx
@@ -107,6 +113,3 @@ docker-compose logs -f app
 - ALI Nazim (Le Speaker de l'atelier)
 - Bonkey FIAGNIGBE
 - TOGO CODE RUN
-
-## Informations
-L'atelier à été fait le Vendredi 29 Novembre 2024 (19h30min -21h30 min ) avec la communauté TCR
